@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RetrofitSingle retrofitSingle =new RetrofitSingle( );
-        retrofitSingle.init();
-
         final Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.service_bot_btn));
         setSupportActionBar(toolbar);

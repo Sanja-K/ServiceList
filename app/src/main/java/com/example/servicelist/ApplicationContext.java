@@ -14,7 +14,11 @@ public class ApplicationContext extends Application {
         Realm.init(this);
         RealmConfiguration config = new RealmConfiguration.Builder().build();
         this.realm.setDefaultConfiguration(config);
+
+        RetrofitSingle retrofitSingle =new RetrofitSingle( );
+        retrofitSingle.init();
         super.onCreate();
+
 
     }
 }

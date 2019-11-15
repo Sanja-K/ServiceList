@@ -101,7 +101,6 @@ public class RequestFragment extends Fragment {
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-                Log.i(TAG, "dispatchTakePictureIntent: photoFile Ex " + ex);
                 // Error occurred while creating the File
             }
 
@@ -112,7 +111,6 @@ public class RequestFragment extends Fragment {
 
                 this.uriLastImage = photoURI;
 
-                Log.i(TAG, "dispatchTakePictureIntent: "+photoURI);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, 1);
             }
@@ -126,7 +124,6 @@ public class RequestFragment extends Fragment {
         File image = new File(storageDir, imageFileName);
        // File image = File.createTempFile( imageFileName, ".jpg", storageDir);
         this.currentPhotoPath = image.getAbsolutePath();
-        Log.i(TAG, "createImageFile:currentPhotoPath "+ image.getName()+ " --- " +image.getAbsolutePath());
         return image;
     }
 
@@ -149,13 +146,7 @@ public class RequestFragment extends Fragment {
             case R.id.menu_send:
 
               int sts = uploadDataForm.sendData(uriLastImage, currentPhotoPath);
-              boolean t = sts==STATUS_RESPONSE_CODE_OK;
-              boolean r = uriLastImage!= null;
-
-                Log.i(TAG, "onOptionsItemSelected: " +sts +" "+ t + " " +r );
                 if (sts==STATUS_RESPONSE_CODE_OK & uriLastImage!= null){
-
-                    Log.i(TAG, "onOptionsItemSelected: clear");
                     this.uriLastImage = null;
                 }
                 break;
@@ -166,7 +157,6 @@ public class RequestFragment extends Fragment {
     @Override
     public void onPrepareOptionsMenu (Menu menu) {
         Log.i(TAG, "onPrepareOptionsMenu: ");
-
     }
 
 

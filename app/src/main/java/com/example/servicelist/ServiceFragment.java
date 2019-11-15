@@ -36,22 +36,7 @@ public class ServiceFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toast.makeText(getActivity(), "FirstFragment.onCreate()",
-                Toast.LENGTH_LONG).show();
-
-
-      /*  Realm realm = Realm.getDefaultInstance();
-        RealmResults<ModelRealm> results;
-        results = realm.where(ModelRealm.class)
-                .findAll();*/
-
-       // RecyclerView recyclerView = findViewById(R.id.recycler_view);
-       // recyclerView.setLayoutManager(new LinearLayoutManager(this));
-       /* RetrofitSingle retrofitSingle =new RetrofitSingle();
-        retrofitSingle.init();*/
-        Log.d("Fragment 1", "onCreate");
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,8 +46,9 @@ public class ServiceFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        Log.i(TAG, "onCreateView: ServiceFragment"+ getData());
+        Log.i(TAG, "onCreateView:ServiceFragment " + getData());
         recyclerView.setAdapter(new RecyclerAdapter(getData(),getActivity()));
-
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);

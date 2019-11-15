@@ -18,7 +18,7 @@ public class RealmController {
      }
 
    public void updateInfo(final JsonArray jsonArray){
-       this.realm = Realm.getDefaultInstance();
+       realm = Realm.getDefaultInstance();
          realm.executeTransaction(new Realm.Transaction() {
              @Override
                  public void execute(Realm realm) {

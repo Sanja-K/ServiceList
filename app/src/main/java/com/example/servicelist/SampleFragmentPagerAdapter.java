@@ -9,8 +9,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 2;
-
     private int numOfTabs;
     private Context mContext;
 
@@ -20,11 +18,6 @@ public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         this.numOfTabs = numOfTabs;
         this.mContext = context;
     }
-
-    /*public SampleFragmentPagerAdapter(@NonNull FragmentManager fm, int behavior, Context context) {
-        super(fm, behavior);
-        this.mContext=context;
-    }*/
 
 @NonNull
     @Override
